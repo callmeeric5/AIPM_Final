@@ -1,0 +1,15 @@
+artifact_uri: /Users/ericwindsor/Documents/EPITA_ERIC/Data_Scicence_Production/mlflow_hands_on-master/mlruns/750660966991525839/e6e2bb938f6e47f3acece744c0dace7f/artifacts
+end_time: 1711310368082
+entry_point_name: ''
+experiment_id: '750660966991525839'
+lifecycle_stage: active
+run_id: e6e2bb938f6e47f3acece744c0dace7f
+run_name: run_test
+run_uuid: e6e2bb938f6e47f3acece744c0dace7f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1711310361146
+status: 4
+tags: []
+user_id: ericwindsor
