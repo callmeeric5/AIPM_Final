@@ -26,6 +26,9 @@ sphinx: `pip install sphinx sphinx_rtd_theme`
 
 cookiecutter: `pip install cookiecutter`
 
+## Run
+
+Mlflow: `mlflow server`
 
 
 
