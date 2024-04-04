@@ -29,7 +29,12 @@ cookiecutter: `pip install cookiecutter`
 ## Run
 
 Mlflow: `mlflow server`
-
+Sphinx: 
+```
+cd docs
+make clean
+make html
+```
 
 
 
