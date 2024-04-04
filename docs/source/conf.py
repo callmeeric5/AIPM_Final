@@ -10,11 +10,19 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
+# import os
+# import sys
+
+# for x in os.walk("../../scripts"):
+#     sys.path.insert(0, x[0])
+
+
 import os
 import sys
 
-for x in os.walk("../../scripts"):
-    sys.path.insert(0, x[0])
+basedir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+sys.path.insert(0, basedir)
+
 
 # -- Project information -----------------------------------------------------
 

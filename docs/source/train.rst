@@ -1,7 +1,7 @@
 train module
 ============
 
-.. automodule:: config
+.. automodule:: train
    :members:
    :undoc-members:
    :show-inheritance:

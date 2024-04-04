@@ -1,4 +1,3 @@
-from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
 import joblib
 import pandas as pd
@@ -8,7 +7,7 @@ from scripts.config import (
     ENCODER_PATH,
     SCALER_PATH,
 )
-import numpy as np
+
 
 
 def preprocess(

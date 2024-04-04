@@ -1,7 +1,7 @@
 inference module
 ================
 
-.. automodule:: config
+.. automodule:: inference
    :members:
    :undoc-members:
    :show-inheritance:
