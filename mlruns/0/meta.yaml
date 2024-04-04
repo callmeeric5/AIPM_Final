@@ -1,6 +1,6 @@
-artifact_location: file:///Users/ericwindsor/Documents/EPITA_ERIC/AI_Project_Methodology/AIPM_Final/mlruns/0
-creation_time: 1712242413389
+artifact_location: mlflow-artifacts:/0
+creation_time: 1712243237028
 experiment_id: '0'
-last_update_time: 1712242413389
+last_update_time: 1712243237028
 lifecycle_stage: active
 name: Default
