@@ -1,0 +1,7 @@
+digest: 1f6bff33
+name: dataset
+profile: '{"num_rows": 4504, "num_elements": 211688}'
+schema: ''
+source: '{"tags": {"mlflow.user": "ericwindsor", "mlflow.source.name": "/Users/ericwindsor/miniconda3/envs/ml/lib/python3.9/site-packages/ipykernel_launcher.py",
+  "mlflow.source.type": "LOCAL"}}'
+source_type: code
