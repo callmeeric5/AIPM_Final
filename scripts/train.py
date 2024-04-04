@@ -1,6 +1,10 @@
 import pandas as pd
 import joblib
-from scripts.config import MODEL_PATH, CATEGORY_FEATURES, CONTINUOUS_FEATURES, MLFLOW_PATH
+from scripts.config import (
+    MODEL_PATH,
+    CATEGORY_FEATURES,
+    CONTINUOUS_FEATURES,
+)
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, f1_score, mean_squared_error
@@ -8,7 +12,9 @@ from scripts.preprocess import preprocess, make_scaler, make_encoder
 import mlflow
 
 
-def split_data(df: pd.DataFrame) -> (pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame):
+def split_data(
+    df: pd.DataFrame,
+) -> (pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame):
     X = df.drop(columns=["CustomerID", "Churn"])
     y = df["Churn"]
     X_train, X_test, y_train, y_test = train_test_split(
@@ -18,20 +24,20 @@ def split_data(df: pd.DataFrame) -> (pd.DataFrame, pd.DataFrame, pd.DataFrame, p
 
 
 def train(
-        df: pd.DataFrame,
-        run_name: str,
-        categorical_columns: list = CATEGORY_FEATURES,
-        continuous_columns: list = CONTINUOUS_FEATURES,
+    df: pd.DataFrame,
+    run_name: str,
+    categorical_columns: list = CATEGORY_FEATURES,
+    continuous_columns: list = CONTINUOUS_FEATURES,
 ) -> dict:
     experiment_name = "Churn Prediction"
     mlflow.set_experiment(experiment_name=experiment_name)
-    mlflow.set_tracking_uri('http://127.0.0.1:5000')
+    mlflow.set_tracking_uri("http://127.0.0.1:5000")
     if not mlflow.get_experiment_by_name(experiment_name):
         mlflow.create_experiment(name=experiment_name)
     experiment = mlflow.get_experiment_by_name(experiment_name)
-    with mlflow.start_run(experiment_id=experiment.experiment_id,
-                          run_name=f"run_{run_name}"
-                          ):
+    with mlflow.start_run(
+        experiment_id=experiment.experiment_id, run_name=f"run_{run_name}"
+    ):
         mlflow.autolog()
         X_train, X_test, y_train, y_test = split_data(df)
         make_encoder(X_train, categorical_columns)
@@ -48,14 +54,17 @@ def train(
         mlflow.sklearn.log_model(model, "random forest regressor")
         mlflow.log_metrics(metrics)
         mlflow.log_params(params)
-        mlflow.sklearn.save_model(model, "models/mlflow/models/random_forest_regressor",
-                                  serialization_format=mlflow.sklearn.SERIALIZATION_FORMAT_PICKLE)
+        mlflow.sklearn.save_model(
+            model,
+            "models/mlflow/models/random_forest_regressor",
+            serialization_format=mlflow.sklearn.SERIALIZATION_FORMAT_PICKLE,
+        )
 
     return metrics
 
 
 def make_model(
-        X_train: pd.DataFrame, y_train: pd.Series, path: str = MODEL_PATH
+    X_train: pd.DataFrame, y_train: pd.Series, path: str = MODEL_PATH
 ) -> RandomForestClassifier:
     model = RandomForestClassifier(n_estimators=100, random_state=1)
     model.fit(X_train, y_train)

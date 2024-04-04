@@ -9,7 +9,6 @@ from scripts.config import (
 )
 
 
-
 def preprocess(
     df: pd.DataFrame,
     categorical_columns: list = CATEGORY_FEATURES,
