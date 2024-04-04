@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/ericwindsor/Documents/EPITA_ERIC/AI_Project_Methodology/AIPM_Final/mlruns/806250578509592080/4e30a2f25813454e9d6ca0a467e3c662/artifacts
+end_time: 1712242111125
+entry_point_name: ''
+experiment_id: '806250578509592080'
+lifecycle_stage: active
+run_id: 4e30a2f25813454e9d6ca0a467e3c662
+run_name: run_test
+run_uuid: 4e30a2f25813454e9d6ca0a467e3c662
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1712242102027
+status: 3
+tags: []
+user_id: ericwindsor
